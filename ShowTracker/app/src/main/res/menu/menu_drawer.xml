@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/show_group">
+        <item
+            android:id="@+id/shows"
+            android:contentDescription="@string/shows"
+            android:icon="@drawable/theater_comedy_24px"
+            android:title="@string/shows" />
+    </group>
+
+    <group android:id="@+id/actor_group">
+        <item
+            android:id="@+id/actors"
+            android:contentDescription="@string/actors"
+            android:icon="@drawable/frame_person_24px"
+            android:title="@string/actors" />
+    </group>
+
+    <group android:id="@+id/settings_group">
+        <item
+            android:id="@+id/settings"
+            android:contentDescription="@string/settings"
+            android:icon="@drawable/settings_24px"
+            android:title="@string/settings" />
+    </group>
+</menu>

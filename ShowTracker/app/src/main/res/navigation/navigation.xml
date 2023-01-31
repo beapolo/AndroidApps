@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/shows">
+
+    <fragment
+        android:id="@+id/shows"
+        android:name="com.example.showtracker.ui.main.ShowsFragment"
+        android:label="Shows"
+        tools:layout="@layout/fragment_shows">
+        <argument
+            android:name="isFavorite"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_shows_to_episodes"
+            app:destination="@id/episodes"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/episodes"
+        android:name="com.example.showtracker.ui.episodes.EpisodesFragment"
+        android:label="Episodes"
+        tools:layout="@layout/fragment_episodes">
+        <argument
+            android:name="showId"
+            app:argType="long"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_episodes_to_actors"
+            app:destination="@id/actors" />
+    </fragment>
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.showtracker.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_account_to_add_actor"
+            app:destination="@id/add_actor" />
+        <action
+            android:id="@+id/action_account_to_add_show"
+            app:destination="@id/add_show" />
+    </fragment>
+    <fragment
+        android:id="@+id/actors"
+        android:name="com.example.showtracker.ui.actors.ActorsFragment"
+        android:label="Actors"
+        tools:layout="@layout/fragment_actors">
+        <argument
+            android:name="showId"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_actors_to_add_show"
+            app:destination="@id/add_show" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_actor"
+        android:name="com.example.showtracker.ui.addactor.AddActorFragment"
+        android:label="Add actor"
+        tools:layout="@layout/fragment_add_actor">
+        <argument
+            android:name="showId"
+            android:defaultValue="0L"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_show"
+        android:name="com.example.showtracker.ui.addshow.AddShowFragment"
+        android:label="Add show"
+        tools:layout="@layout/fragment_add_show">
+        <argument
+            android:name="actorId"
+            android:defaultValue="0L"
+            app:argType="long" />
+    </fragment>
+</navigation>

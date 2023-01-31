@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/show_list"
+        android:icon="@drawable/movie_24px"
+        android:contentDescription="@string/popular_shows"
+        android:title="@string/popular_shows" />
+
+    <item
+        android:id="@+id/favorite_shows"
+        android:icon="@drawable/favorite_24px"
+        android:contentDescription="@string/favorite_shows"
+        android:title="@string/favorite_shows" />
+</menu>
